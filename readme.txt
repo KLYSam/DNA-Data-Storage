@@ -10,7 +10,7 @@ In each subfolder, there are four files:
 
 3. siameseNN.ipynb is a Siamese neural network that was successful in creating a hashing function that takes an input of maximum length 128 and outputs a primer sequence of the specified length and melting temperature.  Importantly, this is a diverging hashing function where similar inputs lead to different outputs.
 - to hash a sequence, first load a trained model using regressor = load_regressor(config).  In this case, to use the model provided, config = “tuned”.
-- then call regressor.hash(filename, number_of_loops, temp, primer_length) to hash a file with multiple sequences to be hashed (one.csv is provided as an example of how to format the data)
+- then call regressor.hash(filename, number_of_loops, temp, primer_length) to hash a file with multiple sequences to be hashed (simply create a csv with the column name 'original_seq' with one sequence in each row under this column)
 - or call regressor.hash_one_seq(seq, number_of_loops, temp, primer_length) to hash one sequence only
 
 4. encode.ipynb was helper code generously provided by Dr Thomas Heinis.  This was included to show how data is first encoded using encode.ipynb, then fed through the hashing function in siameseNN.ipynb to generate primers.
